@@ -1,13 +1,11 @@
 var mongoose = require('mongoose');
-var dbURI = 'mongodb://localhost/Loc8r';
 var gracefulShutdown;
-
+var dbURI = 'mongodb://localhost/Loc8r';
 if (process.env.NODE_ENV === 'production') {
-    dbURI = 'mongodb://johncburns1:Fr0gg13!@ds011258.mongolab.com:11258/heroku_mz82v22f';
+    dbURI = process.env.MONGOLAB_URI;
 }
-
 mongoose.connect(dbURI);
-
+/*
 var readLine = require("readline");
 if(process.platform === "win32") {
   var rl = readLine.createInterface ({
@@ -18,6 +16,7 @@ if(process.platform === "win32") {
       process.emit ("SIGINT");
   });
 }
+*/
 
 mongoose.connection.on('connected', function() {
   console.log('Mongoose connected to ' + dbURI);
