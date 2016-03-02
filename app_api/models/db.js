@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === 'production') {
     dbURI = process.env.MONGOLAB_URI;
 }
 mongoose.connect(dbURI);
-/*
+
 var readLine = require("readline");
 if(process.platform === "win32") {
   var rl = readLine.createInterface ({
@@ -16,7 +16,7 @@ if(process.platform === "win32") {
       process.emit ("SIGINT");
   });
 }
-*/
+
 
 mongoose.connection.on('connected', function() {
   console.log('Mongoose connected to ' + dbURI);
