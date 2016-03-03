@@ -2,9 +2,9 @@ var mongoose = require('mongoose');
 
 //reviewSchema
 var reviewSchema = new mongoose.Schema({
-  author: String,
+  author: {type: String, required: true},
   rating: {type: Number, required: true, min: 0, max: 5},
-  reviewText: String,
+  reviewText: {type: String, required: true},
   createdOn: {type: Date, "default": Date.now}
 });
 
@@ -23,7 +23,7 @@ var locationSchema = new mongoose.Schema({
   rating: {type: Number, "default": 0, min: 0, max: 5},
   facilities: [String],
   //store coordinates in long/lat order
-  coords: {type: [Number], index: '2dsphere'},
+  coords: {type: [Number], index: '2dsphere', required: true},
   //add newsted schema by referencing another schema object as an array
   openingTimes: [openingTimeSchema],
   reviews: [reviewSchema]
