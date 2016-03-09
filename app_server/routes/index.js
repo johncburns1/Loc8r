@@ -6,8 +6,8 @@ var ctrlOthers = require('../controllers/others');
 /* Locations pages */
 router.get('/', ctrlLocations.homelist);
 router.get('/locations/:locationid', ctrlLocations.locationInfo);
-router.get('/locations/:locationid/review/new', ctrlLocations.addReview);
-router.post('/locations/:locationid/review/new', ctrlLocations.doAddReview);
+router.get('/locations/:locationid/reviews/new', ctrlLocations.addReview);
+router.post('/locations/:locationid/reviews/new', ctrlLocations.doAddReview);
 
 /* Other pages */
 router.get('/about', ctrlOthers.about);

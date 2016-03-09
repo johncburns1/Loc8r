@@ -23,7 +23,7 @@ var locationSchema = new mongoose.Schema({
   rating: {type: Number, "default": 0, min: 0, max: 5},
   facilities: [String],
   //store coordinates in long/lat order
-  coords: {type: [Number], index: '2dsphere', required: true},
+  coords: {type: [Number], index: '2dsphere'},
   //add newsted schema by referencing another schema object as an array
   openingTimes: [openingTimeSchema],
   reviews: [reviewSchema]
