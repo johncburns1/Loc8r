@@ -1,24 +1,6 @@
 var mongoose = require('mongoose');
 var Loc = mongoose.model('Location');
 
-/*
-//This isn't necessary. geoNear currently
-//calculates distances in meters, not radians.
-var theEarth = (function(){
-  var earthRadius = 6371; //km, miles is 3959
-  var getDistanceFromRads = function(rads) {
-    return parseFloat(rads * earthRadius);
-  };
-  var getRadsFromDistance = function(distance) {
-    return parseFloat(distance / earthRadius);
-  };
-  return {
-    getDistanceFromRads : getDistanceFromRads,
-    getRadsFromDistance : getRadsFromDistance
-  };
-})();
-*/
-
 var sendJsonResponse = function(res, status, content){
   res.status(status);
   res.json(content);
@@ -161,7 +143,7 @@ module.exports.locationsUpdateOne = function(req, res){
           }
         });
       }
-    );
+  );
 };
 
 module.exports.locationsDeleteOne = function(req, res){
