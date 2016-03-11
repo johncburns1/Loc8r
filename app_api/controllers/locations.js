@@ -13,7 +13,7 @@ module.exports.locationsListByDistance = function(req, res){
   if (req.query.dist){
     dist = parseFloat(req.query.dist) * 1000; //takes params in km
   } else {
-    dist = 20; //default 20 km
+    dist = 20000; //default 20 km
   }
   var point = {
     type: "Point",
