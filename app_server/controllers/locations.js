@@ -3,7 +3,7 @@ var apiOptions = {
   server : "http://localhost:3000"
 };
 if (process.env.NODE_ENV === 'production'){
-  apiOptions.server = 'http://dry-savannah-61693.herokuapp.com';
+  apiOptions.server = 'https://dry-savannah-61693.herokuapp.com';
 }
 var _formatDistance = function (distance) {
   var numDistance, unit;
