@@ -64,9 +64,9 @@ module.exports.homelist = function(req,res){
     method: "GET",
     json: {},
     qs: {
-      lng: "-0.79992599",
-      lat: "51.378091",
-      maxDistance: "20"
+      lng: -0.79992599,
+      lat: 51.378091,
+      maxDistance: 20
     }
   };
   request(
@@ -147,7 +147,7 @@ module.exports.addReview = function(req,res) {
 
 module.exports.doAddReview = function(req, res){
   var requestOptions, path, locationid, postdata;
-  locationid = req.params.locationid, postdata;
+  locationid = req.params.locationid;
   path = '/api/locations/' + locationid + '/reviews';
   postdata = {
     author: req.body.name,
