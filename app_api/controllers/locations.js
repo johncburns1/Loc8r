@@ -22,7 +22,6 @@ module.exports.locationsListByDistance = function(req, res){
   var geoOptions = {
     spherical: true,
     maxDistance: dist,
-//  maxDistance: theEarth.getRadsFromDistance(dist),
     num: 10
   };
   if (!lng || !lat){
@@ -149,7 +148,6 @@ module.exports.locationsUpdateOne = function(req, res){
 module.exports.locationsDeleteOne = function(req, res){
   var locationid = req.params.locationid;
   if (locationid) {
-    //alternately findById and then Loc.remove within the exec call
     Loc
       .findByIdAndRemove(locationid)
       .exec(
