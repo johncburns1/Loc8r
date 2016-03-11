@@ -3,7 +3,7 @@ var apiOptions = {
   server : "http://localhost:3000"
 };
 if (process.env.NODE_ENV === 'production'){
-  apiOptions.server = 'https://getting-mean-loc8r.herokuapp.com';
+  apiOptions.server = 'http://dry-savannah-61693.herokuapp.com';
 }
 var _formatDistance = function (distance) {
   var numDistance, unit;
@@ -148,7 +148,7 @@ module.exports.addReview = function(req,res) {
 module.exports.doAddReview = function(req, res){
   var requestOptions, path, locationid, postdata;
   locationid = req.params.locationid, postdata;
-  path = "/api/locations/" + locationid + '/reviews';
+  path = '/api/locations/' + locationid + '/reviews';
   postdata = {
     author: req.body.name,
     rating: parseInt(req.body.rating, 10),
@@ -169,7 +169,7 @@ module.exports.doAddReview = function(req, res){
         if(response.statusCode === 201){
           res.redirect('/locations/' + locationid);
         } else if (response.statusCode === 400 && body.name && body.name === "ValidationError"){
-          res.redirect("/locations/" + locationid + "/reviews/new?err=val");
+          res.redirect('/locations/' + locationid + '/reviews/new?err=val');
         } else {
           _showError(req, res, response.statusCode);
         }
